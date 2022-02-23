@@ -2,6 +2,7 @@ package com.example.hw6_2
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.core.widget.doOnTextChanged
 import com.example.hw6_2.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -15,6 +16,8 @@ class MainActivity : AppCompatActivity() {
         setContentView(view)
 
         binding.textView.text="Draw"
+        
+        binding.editText1.doOnTextChanged { text, start, before, count ->  }
 
         if (binding.editText1.text==binding.editText2.text && binding.editText1.text==binding.editText3.text){
             binding.textView.text="player ${binding.editText1.text.toString()} winner"
